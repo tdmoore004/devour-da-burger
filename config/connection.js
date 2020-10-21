@@ -1,7 +1,10 @@
 // Set up MySQL connection.
-var mysql = require("mysql");
+const mysql = require("mysql");
+const dotenv = require("dotenv");
 
-var connection = mysql.createConnection({
+dotenv.config();
+
+const connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",

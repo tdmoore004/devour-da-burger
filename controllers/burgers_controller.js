@@ -1,7 +1,5 @@
 const express = require("express");
-const cat = require("../../../../class-repo/13-MVC/01-Activities/17-CatsApp/Solved/models/cat.js");
-const burger = require("../models/burger.js");
-const burgers = require("./models/burgers.js");
+const burgers = require("../models/burger.js");
 
 const router = express.Router();
 
@@ -16,7 +14,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/api/burgers", (req, res) => {
-    burger.insertOne("burger_name", req.body.burger_name, (result) => {
+    burgers.insertOne("burger_name", req.body.name, (result) => {
         res.json({ id: result.insertId });
     });
 });
@@ -26,7 +24,7 @@ router.put("/api/burgers/:id", (req, res) => {
 
     console.log("condition", condition);
 
-    burger.updateOne({devoured: req.body.devoured}, condition, (result) => {
+    burgers.updateOne({devoured: req.body.devoured}, condition, (result) => {
         if (result.changedRows === 0) {
             return res.status(404).end();
         } else {
