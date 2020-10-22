@@ -1,0 +1,11 @@
+h1 {
+    margin-left: 10px;
+}
+
+button.devour {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    padding: 0 15px;
+    float: right;
+};
