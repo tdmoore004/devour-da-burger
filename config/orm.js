@@ -1,19 +1,18 @@
 const connection = require("./connection.js");
 
 function objToSql(ob) {
-    var arr = [];
+    let arr = [];
 
-    // loop through the keys and push the key/value as a string int arr
-    for (var key in ob) {
-        var value = ob[key];
+    // loop through the keys and push the key/value as a string into arr
+    for (let key in ob) {
+        let value = ob[key];
         // check to skip hidden properties
         if (Object.hasOwnProperty.call(ob, key)) {
-            // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
+            // if string with spaces, add quotations
             if (typeof value === "string" && value.indexOf(" ") >= 0) {
                 value = "'" + value + "'";
             }
-            // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-            // e.g. {sleepy: true} => ["sleepy=true"]
+
             arr.push(key + "=" + value);
         }
     }
@@ -24,6 +23,7 @@ function objToSql(ob) {
 
 const orm = {
 
+    // Query for selecting all items from table.
     selectAll: (table, cb) => {
         const queryString = "SELECT * FROM " + table + ";";
         connection.query(queryString, function (err, result) {
@@ -34,6 +34,7 @@ const orm = {
         });
     },
 
+    // Query for adding an item to table
     insertOne: (table, cols, vals, cb) => {
         var queryString = "INSERT INTO " + table;
 
@@ -53,6 +54,7 @@ const orm = {
         });
     },
 
+    // Query for updating item in table.
     updateOne: (table, objColVals, condition, cb) => {
         var queryString = "UPDATE " + table;
 

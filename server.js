@@ -1,7 +1,10 @@
+// Requiring in the dependencies.
 const express = require("express");
 
+// Setting up the port
 const PORT = process.env.PORT || 8080;
 
+// Setting up express.
 const app = express();
 
 app.use(express.static("public"));
@@ -9,12 +12,14 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Requiring in handlebars and setting handlebars as view engine
 const exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/burgers_controller.js");
+// Requiring in the routes and utilizing them.
+const routes = require("./controllers/burgers_controller.js");
 
 app.use(routes);
 
