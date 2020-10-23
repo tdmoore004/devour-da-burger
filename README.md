@@ -20,8 +20,8 @@ This application is hosted on Heroku and does not need to be installed. If you w
 
 ## Usage
 
-[Screen recording of app in use.](https://drive.google.com/file/d/1Yz5Z70Ow_ws_pnAzXayeYqdidlmLOv-B/view)
-1. Go to the following link in your browser of choice.
+[Screen recording of app in use.](https://drive.google.com/file/d/11Mff-gX8V1FU64Orp9oHHdaraNjN1T-v/view)
+1. Go to [https://ancient-garden-46972.herokuapp.com/](https://ancient-garden-46972.herokuapp.com/) in your browser of choice.
 2. Utilize the add burger input at the bottom of the screen to input any burger of your choice.
 3. After burger is added it will show up in list on left side of screen.  
 4. After you have DEVOURED one of the burgers on your list you can click the devoured button.
